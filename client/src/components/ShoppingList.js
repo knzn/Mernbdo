@@ -22,7 +22,7 @@ class ShoppingList extends Component {
         <ListGroup>
           <TransitionGroup className="shopping-list">
             {items.map(
-              ({ _id, itemName, itemCount, itemPrice, totalPrice }) => (
+              ({ _id, itemName, itemCount, itemPrice, totalPrice, date }) => (
                 <CSSTransition key={_id} timeout={500} classNames="fade">
                   <ListGroupItem>
                     <Table dark>
@@ -32,6 +32,7 @@ class ShoppingList extends Component {
                           <th>Item Count</th>
                           <th>Item Price</th>
                           <th>Total Price</th>
+                          <th>Date</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -58,6 +59,7 @@ class ShoppingList extends Component {
                               thousandSeparator={true}
                             />
                           </td>
+                          <td color="primary">{date}</td>
                           <td>
                             <Button
                               className="remove-btn"

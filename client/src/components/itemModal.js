@@ -41,7 +41,8 @@ class ItemModal extends Component {
       itemName: this.state.itemName,
       itemCount: this.state.itemCount,
       itemPrice: this.state.itemPrice,
-      totalPrice: this.state.itemCount * this.state.itemPrice
+      totalPrice: this.state.itemCount * this.state.itemPrice,
+      date: this.date
     };
 
     // Add item via AddItem Action

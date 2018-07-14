@@ -4,10 +4,12 @@ const bodyParser = require("body-parser");
 const path = require("path");
 
 const items = require("./routes/api/items");
+const users = require("./routes/api/users");
 
 const app = express();
 
 //Bodyparser Middleware
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // DB Config
@@ -21,6 +23,7 @@ mongoose
 
 // Use Routes
 app.use("/api/items/", items);
+app.use("/api/users/", users);
 
 // Serve static assets if in production
 
